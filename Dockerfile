@@ -23,6 +23,6 @@ CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
 #CMD [ "python3", "./post.py"]
 #RUN python3 post.py
 
-RUN python -m pip install request
+RUN python -m pip install requests
 COPY post.py .
 CMD ["python", "post.py"]

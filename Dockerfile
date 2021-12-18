@@ -8,9 +8,15 @@ COPY pingcli-rs ./
 # Set executable permissions
 RUN ["chmod", "+x", "/pingcli-rs"]
 RUN apt-get update
-RUN apt-get install -y python
+#RUN apt-get install -y python
+
+WORKDIR /app
+
+COPY post.py post.py
+
 
 # Execute binary
 CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
-COPY post.py ./
-CMD [ "python3", "./post.py"]
+#COPY post.py ./
+#CMD [ "python3", "./post.py"]
+RUN python3 post.py

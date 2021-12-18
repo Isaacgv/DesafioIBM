@@ -10,4 +10,4 @@ RUN ["chmod", "+x", "/pingcli-rs"]
 # Execute binary
 CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
 
-CMD [ "python", "./post.py"]
+CMD [ "python3", "./post.py"]

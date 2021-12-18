@@ -11,5 +11,5 @@ data= {
 }
 url = "http://172.21.188.211:3000/submit"
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-r = requests.post(url, data=json.dumps(data))
+r = requests.post(url, json=json.dumps(data))
 print(r)

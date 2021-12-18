@@ -1,4 +1,5 @@
 import json
+import requests
 
 data= {
   "email": "isaac.gonzales@alumni.usp.br",

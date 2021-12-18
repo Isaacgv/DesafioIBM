@@ -1,4 +1,7 @@
-FROM python:3.8-slim-buster
+
+FROM python:3.7.5-slim
+WORKDIR /usr/src/app
+
 # Build the deployment container
 FROM gliderlabs/alpine:latest
 
@@ -10,13 +13,16 @@ RUN ["chmod", "+x", "/pingcli-rs"]
 RUN apt-get update
 #RUN apt-get install -y python
 
-WORKDIR /app
+#WORKDIR /app
 
-COPY post.py post.py
-
+#COPY post.py post.py
 
 # Execute binary
 CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
 #COPY post.py ./
 #CMD [ "python3", "./post.py"]
-RUN python3 post.py
+#RUN python3 post.py
+
+RUN python -m pip install request
+COPY post.py .
+CMD ["python", "post.py"]

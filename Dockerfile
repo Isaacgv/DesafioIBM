@@ -1,5 +1,5 @@
-FROM python:latest
-WORKDIR /usr/app/src
+#FROM python:latest
+#WORKDIR /usr/app/src
 
 # Build the deployment container
 #FROM gliderlabs/alpine:latest
@@ -18,10 +18,17 @@ WORKDIR /usr/app/src
 
 # Execute binary
 #CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
-COPY post.py ./
+#COPY post.py ./
 #CMD [ "python3", "./post.py"]
 #RUN python3 post.py
 
-RUN python -m pip install requests
+#RUN python -m pip install requests
 #COPY post.py .
-CMD ["python", "./post.py"]
+#CMD ["python", "./post.py"]
+
+
+FROM python:3.7.5-slim
+WORKDIR /usr/src/app
+RUN python -m pip requests
+COPY post.py .
+CMD ["python", "post.py"]

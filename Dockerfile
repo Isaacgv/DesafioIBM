@@ -29,6 +29,5 @@ CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
 
 FROM python:3.7.5-slim
 WORKDIR /usr/src/app
-RUN python -m pip requests
 COPY post.py .
 CMD ["python", "post.py"]

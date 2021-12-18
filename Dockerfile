@@ -6,8 +6,10 @@ COPY pingcli-rs ./
 
 # Set executable permissions
 RUN ["chmod", "+x", "/pingcli-rs"]
+RUN apt-get update
+RUN apt-get install -y python
 
 # Execute binary
 CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
 
-CMD [ "python3", "./post.py"]
+CMD [ "python", "./post.py"]

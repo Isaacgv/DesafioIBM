@@ -8,4 +8,4 @@ COPY pingcli-rs ./
 RUN ["chmod", "+x", "/pingcli-rs"]
 
 # Execute binary
-CMD /pingcli-rs -e email@gmail.com
+CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br

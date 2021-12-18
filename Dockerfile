@@ -1,3 +1,4 @@
+FROM python:3.8-slim-buster
 # Build the deployment container
 FROM gliderlabs/alpine:latest
 

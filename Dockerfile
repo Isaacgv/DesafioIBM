@@ -1,6 +1,5 @@
-
-FROM python:3.7.5-slim
-WORKDIR /usr/src/app
+FROM python:latest
+WORKDIR /usr/app/src
 
 # Build the deployment container
 FROM gliderlabs/alpine:latest
@@ -10,7 +9,7 @@ COPY pingcli-rs ./
 
 # Set executable permissions
 RUN ["chmod", "+x", "/pingcli-rs"]
-RUN apt-get update
+
 #RUN apt-get install -y python
 
 #WORKDIR /app
@@ -19,10 +18,10 @@ RUN apt-get update
 
 # Execute binary
 CMD /pingcli-rs -e isaac.gonzales@alumni.usp.br
-#COPY post.py ./
+COPY post.py ./
 #CMD [ "python3", "./post.py"]
 #RUN python3 post.py
 
 RUN python -m pip install requests
-COPY post.py .
-CMD ["python", "post.py"]
+#COPY post.py .
+CMD ["python", "./post.py"]
